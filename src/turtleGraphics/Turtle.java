@@ -60,4 +60,12 @@ public class Turtle {
         return currentPosition;
     }
 
+    public void turnLeft() {
+        switch (currentDirection) {
+            case EAST -> changeCurrentDirectionTo(NORTH);
+            case NORTH -> changeCurrentDirectionTo(WEST);
+            case WEST -> changeCurrentDirectionTo(SOUTH);
+            case SOUTH -> changeCurrentDirectionTo(EAST);
+        }
+    }
 }
