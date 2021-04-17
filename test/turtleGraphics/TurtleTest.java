@@ -97,6 +97,60 @@ public class TurtleTest {
     }
 
     @Test
+    void turtleCanTurnLeftWhileFacingEast() {
+        //given
+        assertSame(EAST, ijapa.getCurrentDirection());
+
+        //when
+        ijapa.turnLeft();
+
+        //
+        assertSame(NORTH, ijapa.getCurrentDirection());
+    }
+
+    @Test
+    void turtleCanTurnLeftWhileFacingNorth() {
+        //given
+        ijapa.turnLeft();
+        assertSame(NORTH, ijapa.getCurrentDirection());
+
+        //when
+        ijapa.turnLeft();
+
+        //assert
+        assertSame(WEST, ijapa.getCurrentDirection());
+    }
+
+    @Test
+    void turtleCanTurnLeftWhileFacingWest() {
+        //given
+        ijapa.turnLeft();
+        ijapa.turnLeft();
+        assertSame(WEST, ijapa.getCurrentDirection());
+
+        //when
+        ijapa.turnLeft();
+
+        //assert
+        assertSame(SOUTH, ijapa.getCurrentDirection());
+    }
+
+    @Test
+    void turtleCanTurnLeftWhileFacingSouth() {
+        //given
+        ijapa.turnLeft();
+        ijapa.turnLeft();
+        ijapa.turnLeft();
+        assertSame(SOUTH, ijapa.getCurrentDirection());
+
+        //when
+        ijapa.turnLeft();
+
+        //assert
+        assertSame(EAST, ijapa.getCurrentDirection());
+    }
+
+    @Test
     void turtleCanMoveForwardFacingEast() {
         assertSame(EAST, ijapa.getCurrentDirection());
         //when
