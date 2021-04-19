@@ -157,14 +157,14 @@ public class TurtleTest {
         ijapa.moveForwardBy(5);
 
         //assert
-        assertEquals(new Position(0,5), ijapa.getCurrentPosition());
+        assertEquals(new Position(0,4), ijapa.getCurrentPosition());
     }
 
     @Test
     void turtleCanMoveForwardFacingSouth() {
         //given
         ijapa.moveForwardBy(5);
-        assertEquals(new Position(0, 5), ijapa.getCurrentPosition());
+        assertEquals(new Position(0, 4), ijapa.getCurrentPosition());
 
         //when
         ijapa.turnRight();
@@ -172,40 +172,40 @@ public class TurtleTest {
         ijapa.moveForwardBy(5);
 
         //assert
-        assertEquals(new Position(5, 5), ijapa.getCurrentPosition());
+        assertEquals(new Position(4, 4), ijapa.getCurrentPosition());
     }
 
     @Test
     void turtleCanMoveForwardFacingWest() {
         //given
         ijapa.moveForwardBy(5);
-        assertEquals(new Position(0, 5), ijapa.getCurrentPosition());
+        assertEquals(new Position(0, 4), ijapa.getCurrentPosition());
         ijapa.turnRight();
         assertSame(SOUTH, ijapa.getCurrentDirection());
         ijapa.moveForwardBy(5);
-        assertEquals(new Position(5, 5), ijapa.getCurrentPosition());
+        assertEquals(new Position(4, 4), ijapa.getCurrentPosition());
 
         //when
         ijapa.turnRight();
         assertSame(WEST, ijapa.getCurrentDirection());
-        ijapa.moveForwardBy(3);
+        ijapa.moveForwardBy(5);
 
         //assert
-        assertEquals(new Position(5, 2), ijapa.getCurrentPosition());
+        assertEquals(new Position(4, 0), ijapa.getCurrentPosition());
     }
 
     @Test
     void turtleCanMoveForwardFacingNorth() {
         //given
         ijapa.moveForwardBy(5);
-        assertEquals(new Position(0, 5), ijapa.getCurrentPosition());
+        assertEquals(new Position(0, 4), ijapa.getCurrentPosition());
         ijapa.turnRight();
         assertSame(SOUTH, ijapa.getCurrentDirection());
         ijapa.moveForwardBy(5);
         ijapa.turnRight();
         assertSame(WEST, ijapa.getCurrentDirection());
-        ijapa.moveForwardBy(3);
-        assertEquals(new Position(5, 2), ijapa.getCurrentPosition());
+        ijapa.moveForwardBy(5);
+        assertEquals(new Position(4, 0), ijapa.getCurrentPosition());
 
         //when
         ijapa.turnRight();
@@ -213,6 +213,6 @@ public class TurtleTest {
         ijapa.moveForwardBy(5);
 
         //assert
-        assertEquals(new Position(0, 2), ijapa.getCurrentPosition());
+        assertEquals(new Position(0, 0), ijapa.getCurrentPosition());
     }
 }
