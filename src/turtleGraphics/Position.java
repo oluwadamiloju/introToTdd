@@ -43,4 +43,12 @@ public class Position {
     public void decreaseRowPositionBy(int numberOfSteps) {
         rowPosition -= numberOfSteps;
     }
+
+    public int getRowPosition() {
+        return rowPosition;
+    }
+
+    public int getColumnPosition() {
+        return columnPosition;
+    }
 }

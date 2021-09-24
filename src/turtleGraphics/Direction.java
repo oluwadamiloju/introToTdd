@@ -1,5 +1,5 @@
 package turtleGraphics;
 
 public enum Direction {
-    EAST, SOUTH, WEST, NORTH;
+    EAST, SOUTH, WEST, NORTH
 }

@@ -215,4 +215,24 @@ public class TurtleTest {
         //assert
         assertEquals(new Position(0, 0), ijapa.getCurrentPosition());
     }
+
+    @Test
+    void turtleCanWriteWhileFacingEast() {
+        //given
+        ijapa.movePenDown();
+        Sketchpad sketchpad = new Sketchpad(20, 20);
+
+        //when
+        int numberOfSteps = 5;
+        ijapa.writeOn(sketchpad, numberOfSteps);
+
+        //assert
+        int counter = 0;
+        var floor = sketchpad.getFloor();
+        while(counter < numberOfSteps) {
+            var floor = sketchpad.getFloor();
+            assertEquals(1, floor[0][counter]);
+            counter++;
+        }
+    }
 }

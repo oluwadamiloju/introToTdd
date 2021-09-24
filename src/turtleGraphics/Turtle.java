@@ -48,7 +48,7 @@ public class Turtle {
     }
 
     public void moveForwardBy(int numberOfSteps) {
-        numberOfSteps = numberOfSteps - 1;
+        numberOfSteps -= 1;
         switch (currentDirection){
             case EAST -> currentPosition.increaseColumnPositionBy(numberOfSteps);
             case SOUTH -> currentPosition.increaseRowPositionBy(numberOfSteps);
@@ -68,5 +68,24 @@ public class Turtle {
             case WEST -> changeCurrentDirectionTo(SOUTH);
             case SOUTH -> changeCurrentDirectionTo(EAST);
         }
+    }
+
+    public void writeOn(Sketchpad sketchpad, int numberOfSteps) {
+        if(!isPenUp()){
+            switch (currentDirection){
+                case EAST:
+                    int counter = 0;
+                    while(counter < numberOfSteps){
+                        int floor[][] = sketchpad.getFloor();
+                        int rowPosition = currentPosition.getRowPosition();
+                        int columnPosition = currentPosition.getColumnPosition();
+
+                        floor[rowPosition][columnPosition + counter] = 1;
+                        counter++;
+                    }
+                    break;
+            }
+        }
+        moveForwardBy(numberOfSteps);
     }
 }
